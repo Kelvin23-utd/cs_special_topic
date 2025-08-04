@@ -13,11 +13,11 @@ logging.basicConfig(level=logging.INFO)
 # The pipeline function from Hugging Face handles all the complexity.
 try:
     logging.info("Loading the jailbreak detection model...")
-    # Using a specific version for stability
+    # Use the same model as your working test_model.py
     classifier = pipeline(
         "text-classification", 
-        model="GuardrailsAI/prompt-saturation-attack-detector",
-        revision="fb39b1a26f6354f9a76722c6e615f69661c1a967"
+        model="jackhhao/jailbreak-classifier", 
+        device="cpu"
     )
     logging.info("Model loaded successfully.")
 except Exception as e:
